@@ -72,12 +72,13 @@ MNase-seq_nf_pipeline/
 │   ├── trimmomatic.nf
 │   └── bowtie2.nf
 ├── adapters/
-│   └── TruSeq3-PE.fa
+│   └── TruSeq3-PE-2-GGGGG.fa
 ├── data/
-│   ├── test_R1.fastq.gz
-│   └── test_R2.fastq.gz
+│   ├── test1_mnaseseq_R1.fastq.gz
+│   └── test1_mnaseseq_R2.fastq.gz
 ├── reference/
 │   └── genome.fa
+├── ref_index/
 └── results/
 ```
 
@@ -89,8 +90,8 @@ Place your paired-end MNase-seq FASTQ files in the `data/` directory:
 
 ```text
 data/
-├── test_R1.fastq.gz
-└── test_R2.fastq.gz
+│   ├── test1_mnaseseq_R1.fastq.gz
+│   └── test1_mnaseseq_R2.fastq.gz
 ```
 
 Here, `R1` and `R2` represent forward and reverse reads, respectively.
@@ -106,7 +107,7 @@ reference/genome.fa
 Build the Bowtie2 index:
 
 ```bash
-bowtie2-build reference/genome.fa reference/genome
+bowtie2-build reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz ref_index/Homo_sapiens.GRCh38.dna.primary_assembly
 ```
 
 ### 3. Configure parameters
