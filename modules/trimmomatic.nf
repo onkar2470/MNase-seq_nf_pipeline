@@ -18,7 +18,7 @@ process TRIMMOMATIC {
 
     script:
     """
-    trimmomatic PE -threads ${params.threads} $R1_fastq $R2_fastq \
+    _JAVA_OPTIONS="-Xmx128G" trimmomatic PE -threads ${params.threads} $R1_fastq $R2_fastq \
     ${sample_id}_trimmed_R1_paired.fastq.gz \
     ${sample_id}_trimmed_R1_unpaired.fastq.gz \
     ${sample_id}_trimmed_R2_paired.fastq.gz \
